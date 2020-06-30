@@ -7,7 +7,12 @@ Cordova permet de construire des application à partir de code javascript :
 
 Tout cela théoriquement avec une seule base de code.
 
-L'installation et la configuration demandent des notions de manipulation de l'outil informatique relativement avancées. La construction d'application pour ordinateurs de bureau est relativement simple, le déploiement sur mobile peut lui s'avérer sensiblement plus complexe.
+L'installation et la configuration demandent des notions de manipulation de l'outil informatique relativement avancées. La construction d'application pour ordinateurs de bureau est relativement simple, le déploiement sur mobile peut lui s'avérer sensiblement plus complexe même si la surcouche **PhoneGap** simplifie grandement les choses notament sur Android.
+
+Pour suivre ce guide il vous faudra des notions de bases sur :
+- HTML / CSS / JS
+- Github (pour PhoneGap)
+- NodeJS (pour Cordova)
 
 Si vous vous posez la question de savoir si cordova est adapté à votre projet vous pouvez consulter le lien ci-dessous : 
 https://www.codementor.io/@marcusparsons/should-i-build-an-app-using-phonegap-mpzg5lt2r
@@ -15,7 +20,7 @@ https://www.codementor.io/@marcusparsons/should-i-build-an-app-using-phonegap-mp
 Une ressource cordova en anglais est aussi disponible en suivant ce lien :
 https://github.com/jameshosken/itpcamp2017/blob/8e2dc979c9c350599ef0201324e7c814001682f5/p5-on-the-phone/readme.md
 
-## Comment commencer ?
+## Cordova ?
 
 ### Installation
 
@@ -51,16 +56,6 @@ Pour electron :
 sudo cordova platform add electron
 ```
 
-Pour android : 
-```
-sudo cordova platform add android
-```
-
-Pour ios : 
-```
-sudo cordova platform add ios
-```
-
 
 ### Executer les exemples
 
@@ -80,12 +75,8 @@ sudo cordova run electron --release
 ```
 Le tag release permet de cacher la console de debuggage javascript qui s'affiche par défaut.
 
-Pour exécuter l'application android :
-```
-sudo cordova run android
-```
 
-### Phonegap
+### Phonegap pour les applications mobiles
 
 Phonegap est une surcouche développée par Adobe pour faciliter le developpement et le déploiement d'applications iOS et Android.
 
@@ -93,53 +84,47 @@ https://phonegap.com/getstarted/
 
 Phonegap se base sur une application desktop fonctionnant conjointement avec une application smartphone, communicant entre elles via wifi et permettant de simplifier le process de test.
 
-
 https://community.adobe.com/t5/phonegap-build/phonegap-desktop-installation-error/td-p/9832282?page=1&profile.language=fr
 
+Phonegap propose ensuite un système de build entièrement en ligne ne nécessitant l'installation d'aucune bibliothèque.
 
-## Problèmes relatifs à android
+https://build.phonegap.com/
 
+Il faut pour cela avoir publier son code dans un dépôt github et pointer le système de build vers celui-ci. 
 
-Pour android il faut bien faire attention à travailler avec java 8
-https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html
+Il est nécessaire de n'avoir qu'une seule application sur ce dépôt. Attention aussi il n'est pas nécessaire de publier l'intégralité des fichier fournis par Phonegap au moment de la création de l'application - en effet une bonne quantité est générée par phonegap.
 
-https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
-
-https://github.com/ionic-team/ionic-cli/issues/3115#issuecomment-456413405
-
-Faites bien attention à n'avoir qu'un seul jdk installé et d'avoir mis en place les variables d'environement nécessaires.
-
-### Mac
-Sous mac il peut être nécessaire de mettre à jour le fichier système caché *bash_profile*
-
-à l'aide de la commande :
+A ce titre il est préférable d'ajouter ces quelques lignes à votre fichier *.gitginore*, avant de pousser vos modifications.
 
 ```
-sudo nano ~/.bash_profile
+*./platforms
+*./plugins
+*./hooks
+*./.cordova
 ```
 
-Il faut ajouter à ce fichier les chemins vers les répértoires d'installation de java et du sdk d'android : 
+Vous pourrez alors créer des applications pour android gratuitement et pour iOS moyenant la somme de 99€ par an (coût d'un compte developper apple permettant de signer ses applications).
 
-```
-export JAVA_HOME=Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java
 
-export ANDROID_HOME=/Users/b.recoules/Library/Android/sdk
+## Customisation de l'application
 
-export PATH=${PATH}:/Users/b.recoules/Library/Android/sdk/platform-tools:/Users/b.recoules/Library/Android/sdk/tools
-```
+### Cordova
 
-## Problèmes relatifs à iOS
+Tout est intégré dans votre dossier applicatif nommé */www*
 
-Avant de pouvoir cibler ios, il faut :
+Dans le dossier racine vous pouvez éditer le fichier *config.xml*, avec un nouveau nom, une description appropriée et des renseignement sur l'auteur.
 
-- avoir installé Xcode
-- avoir installé les outils de ligne de commande
+Vous pouvez ensuite modifier/ remplacer le logo dans le dossier */img*.
 
-et avoir installé les paquets node suivant
+### PhoneGap
 
-```
-npm install -g ios-sim
-npm install -g ios-deploy
-```
+De la même façon tout est intégré dans votre dossier applicatif nommé */www*
 
-https://cordova.apache.org/docs/fr/latest/guide/platforms/ios/
+Dans le dossier racine vous pouvez éditer le fichier *config.xml*, avec un nouveau nom, une description appropriée et des renseignement sur l'auteur.
+
+Vous pouvez ensuite modifier/ remplacer le logo dans le dossier */img*.
+
+Les icônes aux différentes tailles seront stockés dans le dossier */res*
+
+
+
