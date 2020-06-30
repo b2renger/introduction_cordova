@@ -62,7 +62,6 @@ sudo cordova platform add ios
 ```
 
 
-
 ### Executer les exemples
 
 Le code fournit ici n'est que le code applicatif c'est à dire que ce n'est pas l'ensemble du dossier généré par cordova. Cela signifie qu'il faut d'abord générer un nouveau projet avec les lignes de commande ci-dessus puis copier le code fourni dans le dossier 'www' du dossier créée par cordova. Ensuite il suffi de lancer l'application pour la plateforme désirée en :
@@ -86,8 +85,19 @@ Pour exécuter l'application android :
 sudo cordova run android
 ```
 
-## Problèmes relatifs à android
+### Phonegap
 
+Phonegap est une surcouche développée par Adobe pour faciliter le developpement et le déploiement d'applications iOS et Android.
+
+https://phonegap.com/getstarted/
+
+Phonegap se base sur une application desktop fonctionnant conjointement avec une application smartphone, communicant entre elles via wifi et permettant de simplifier le process de test.
+
+
+https://community.adobe.com/t5/phonegap-build/phonegap-desktop-installation-error/td-p/9832282?page=1&profile.language=fr
+
+
+## Problèmes relatifs à android
 
 
 Pour android il faut bien faire attention à travailler avec java 8
@@ -120,7 +130,7 @@ export PATH=${PATH}:/Users/b.recoules/Library/Android/sdk/platform-tools:/Users/
 
 ## Problèmes relatifs à iOS
 
-Avant de pouvoir cibler ios, il faut 
+Avant de pouvoir cibler ios, il faut :
 
 - avoir installé Xcode
 - avoir installé les outils de ligne de commande
