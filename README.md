@@ -92,7 +92,9 @@ https://build.phonegap.com/
 
 Il faut pour cela avoir publier son code dans un dépôt github et pointer le système de build vers celui-ci. 
 
-Il est nécessaire de n'avoir qu'une seule application sur ce dépôt. Attention aussi il n'est pas nécessaire de publier l'intégralité des fichier fournis par Phonegap au moment de la création de l'application - en effet une bonne quantité est générée par phonegap.
+Il est nécessaire de n'avoir qu'une seule application sur ce dépôt. Ou si vous êtes suffisament à l'aise avec github, il est possible de publier le code de différentes applications dans différentes branches et donc au moment de builder l'application de pointer vers une branche spécifique.
+
+Attention aussi il n'est pas nécessaire de publier l'intégralité des fichier fournis par Phonegap au moment de la création de l'application - en effet une bonne quantité est générée par phonegap.
 
 A ce titre il est préférable d'ajouter ces quelques lignes à votre fichier *.gitginore*, avant de pousser vos modifications.
 
