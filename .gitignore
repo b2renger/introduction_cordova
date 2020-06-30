@@ -1,8 +1,8 @@
 # Phonegap
-*./*/platforms
-*./*/plugins
-*./*/hooks
-*./*/.cordova
+*./platforms
+*./plugins
+*./hooks
+*./.cordova
 
 
 ## Cordova ignores
