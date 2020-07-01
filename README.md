@@ -5,14 +5,25 @@ Cette ressource vise à détailler les différentes solutions existantes permett
 Trois solutions permettent de constuire différents types d'application :
 - Cordova : permet de constuire tout type d'applications. Dans les faits nous nous contenrons de la possibilité de créer des applications pour windows, mac os et linux.
 - PhoneGap : la solution la plus simple pour construire une application **android**.
-- Progressive Web App : qui est en réalité plus une norme permettant de *packager* un page web afin de l'éxecuter comme une application pour **android** et **iOS**.
+- Progressive Web App (ou PWA) : qui est en réalité plus une norme permettant de *packager* un page web afin de l'éxecuter comme une application pour **android** et **iOS**.
 
 Pour suivre ce guide il vous faudra des notions de bases sur :
 - HTML / CSS / JS 
 - Github (pour PhoneGap)
 - NodeJS (pour Cordova)
 
-Il est à noter que ce type de techniques n'est pas à l'épreuve des balles pour tout type d'applications. Les applications avec une consommation de ressources intensives (jeux vidéo, application de traitement vidéo / photo, application 3D etc ...) peuvent se révéler être un réel challenge à developper de cette manière.
+Il est à noter que ce type de techniques n'est pas à l'épreuve des balles pour tout type d'applications. Les applications avec une consommation de ressources intensives (jeux vidéo, application de traitement vidéo / photo, application 3D etc ...) peuvent se révéler être un réel challenge à developper de cette manière; il est parfois préférable de passer par des solutions natives.
+
+Des exemples seront fournis avec 3 types d'outils :
+- HTML CSS JS
+- [p5js](https://p5js.org/)
+- [cablesgl](https://cables.gl/home)
+
+## Contenu
+
+* [Cordova](#Cordova)
+* [PhoneGap](#PhoneGap)
+* [PWA](#PWA)
 
 ## Cordova
 
@@ -93,7 +104,7 @@ Vous pouvez ensuite modifier/ remplacer le logo dans le dossier */img*.
 
 
 
-## Phonegap pour les applications mobiles android
+## PhoneGap
 
 Phonegap est une surcouche développée par Adobe pour faciliter le developpement et le déploiement d'applications iOS et Android.
 
@@ -135,7 +146,7 @@ Vous pouvez ensuite modifier/ remplacer le logo dans le dossier */img*.
 Les icônes aux différentes tailles seront stockés dans le dossier */res*
 
 
-##  PWA == Progressive Web App
+## PWA 
 
 
 https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605
