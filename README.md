@@ -34,7 +34,6 @@ Cordova permet de construire des application à partir de code javascript :
 
 L'installation et la configuration demandent des notions de manipulation de l'outil informatique relativement avancées. La construction d'application pour ordinateurs de bureau est relativement simple, le déploiement sur mobile peut lui s'avérer sensiblement plus complexe même si la surcouche **PhoneGap** simplifie grandement les choses notament sur Android.
 
-
 Si vous vous posez la question de savoir si cordova est adapté à votre projet vous pouvez consulter le lien ci-dessous : 
 https://www.codementor.io/@marcusparsons/should-i-build-an-app-using-phonegap-mpzg5lt2r
 
@@ -93,7 +92,6 @@ Pour exécuter l'application navigateur :
 ```
 sudo cordova run browser
 ```
-
 Pour exécuter l'application électron :
 ```
 sudo cordova run electron --release
@@ -107,7 +105,6 @@ Tout est intégré dans votre dossier applicatif nommé */www*
 Dans le dossier racine vous pouvez éditer le fichier *config.xml*, avec un nouveau nom, une description appropriée et des renseignement sur l'auteur.
 
 Vous pouvez ensuite modifier/ remplacer le logo dans le dossier */img*.
-
 
 
 ## PhoneGap
