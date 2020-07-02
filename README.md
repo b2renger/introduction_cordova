@@ -55,6 +55,12 @@ https://cordova.apache.org/#getstarted
 npm install -g cordova
 ```
 
+### Créer un projet
+
+```
+cordova create hello com.example.hello HelloWorld
+```
+
 ### Ajout de plateformes de déploiement
 
 Afin de pouvoir installer construire des appli electron et android, il peut-être nécessaire d'autoriser l'exécution de paquets 'unsafe'
