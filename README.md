@@ -155,3 +155,8 @@ Les icônes aux différentes tailles seront stockés dans le dossier */res*
 https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605
 https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0
 
+
+
+## Capacitor
+
+https://capacitorjs.com/
