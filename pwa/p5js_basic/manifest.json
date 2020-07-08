@@ -1,7 +1,7 @@
 {
     "name": "Hello p5js pwa",
     "short_name": "p5",
-    "start_url": "https://b2renger.github.io/introduction_cordova/pwa/p5js_basic/",
+    "start_url": ".",
     "icons": [{
         "src": "icons/xhdpi.png",
           "sizes": "96x96",
