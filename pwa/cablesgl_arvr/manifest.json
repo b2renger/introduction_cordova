@@ -1,5 +1,5 @@
 {
-    "name": "Hello cables pwa",
+    "name": "cables pwa seethrough vr",
     "short_name": "cables",
     "start_url": ".",
     "icons": [{
@@ -21,6 +21,6 @@
         }],
     "lang": "en",
     "display": "standalone",
-    "background_color": "white",
-    "theme_color": "white"
+    "background_color": "black",
+    "theme_color": "black"
   }

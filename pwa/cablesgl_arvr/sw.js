@@ -1,4 +1,4 @@
-var cacheName = 'p5js-pwa';
+var cacheName = 'cables-pwa-arvr';
 
 var filesToCache = [
     '/',
