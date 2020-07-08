@@ -1,6 +1,7 @@
-<html>
+<!doctype html>
+<html lang="en">
 
-<head lang="en">
+<head >
   <meta charset="UTF-8">
   <title>P5js PWA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,12 @@
   <script language="javascript" type="text/javascript" src="sketch.js"></script>
 
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="white"/>
+  <meta name="theme-color" content="white">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Hello World">
+  <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
 
 
   <style>
@@ -36,7 +42,7 @@
   </style>
 </head>
 
-<body>
+<body class = "fullscree">
   <p id="welcome"> This is a javascript webapp : be sure to have js working on you device !</p>
   <script src="main.js"></script>
 </body>
