@@ -18,12 +18,14 @@ Des exemples seront fournis avec 3 types d'outils :
 - HTML CSS JS
 - [p5js](https://p5js.org/)
 - [cablesgl](https://cables.gl/home)
+- [AFrame](https://aframe.io/) web ar et webWR
 
 ## Contenu
 
 * [Cordova](#Cordova)
 * [PhoneGap](#PhoneGap)
 * [PWA](#PWA)
+* [Capacitor](#Capacitor)
 
 ## Cordova
 
@@ -154,6 +156,120 @@ Les icônes aux différentes tailles seront stockés dans le dossier */res*
 
 https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605
 https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0
+
+
+### cablesgl
+
+Export as single file js.
+
+ - Modify index.html for accesibility stuff
+
+    ```html
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta itemprop="name" content="cablesgl Seethrough vr">
+    <meta itemprop="description" content="made with cables">
+    <meta itemprop="image" content="screenshot.png">
+    <meta name="description" content="made with cables" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Seethrough VR">
+    <meta name="msapplication-TileImage" content="icons/icon-144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    ```
+
+-  add manifest.json
+
+```json
+{
+"name": "cables pwa seethrough vr",
+"short_name": "cables",
+"start_url": ".",
+"icons": [{
+    "src": "icons/Icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }, {
+      "src": "icons/Icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },{
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+"lang": "en",
+"display": "standalone",
+"background_color": "black",
+"theme_color": "black"
+}
+```
+
+- create main.js
+
+```js
+window.onload = () => {
+'use strict';
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('./sw.js');
+    }
+}
+```
+
+- create sw.js
+
+```js
+var cacheName = 'cables-pwa-arvr';
+var filesToCache = [
+        '/',
+        './index.html',
+        './main.js',
+        'js/patch.js'
+];
+
+/* Start the service worker and cache all of the app's content */
+self.addEventListener('install', function (e) {
+    e.waitUntil(
+        caches.open(cacheName).the(function (cache) {
+            return cache.addAll(filesToCache);
+            })
+    );
+});
+
+/* Serve cached content when offline */
+self.addEventListener("fetch", function(event) {
+    event.respondWith(
+      caches.open('file-cache').then(function(cache) {
+        return cache.match(event.request).then(function (response) {
+            if(response) {
+                return response;
+            }else{
+                return fetch(event.request).then(function(response) {
+                  cache.put(event.request, response.clone());
+                  return response;
+            });
+            }
+        });
+        })
+    );
+});
+```
+
+- add main.js to your index.html's body
+```html
+ <script src="main.js"></script>
+ ```
+- run lighthouse from the developper tools in chrome and you should get the badge !
+- publish to the web !
+
 
 
 
